@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Guitar Songs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Learn Guitar Songs</h1>
+        
+        <form id="song-form">
+            <label for="songs">Enter songs you want to learn:</label><br>
+            <div id="song-inputs"></div>
+            <button type="submit">Start Learning</button>
+        </form>
+        
+        <div id="results"></div>
+    </div>
+
+    <script>
+        const songInputsContainer = document.getElementById('song-inputs');
+        const numberOfSongs = 5;
+
+        for (let i = 1; i <= numberOfSongs; i++) {
+            const songDiv = document.createElement('div');
+            songDiv.className = 'song-input';
+            songDiv.innerHTML = `
+                <text for="song${i}">Song ${i}:</text>
+                <input type="text" id="song${i}" name="song${i}" placeholder="song, artist">
+            `;
+            songInputsContainer.appendChild(songDiv);
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
